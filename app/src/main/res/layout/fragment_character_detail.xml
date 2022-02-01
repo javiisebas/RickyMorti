@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_gravity="center"
+    android:background="@color/bg_screen"
+    tools:context=".CharacterDetailFragment">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/character_image_detail"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/image_character"
+        android:contentDescription="@string/character_image"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/flow_name_specie"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.ShapeableDetailImageView"
+        tools:src="@tools:sample/avatars" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_name_specie"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="character_name_detail,character_specie_detail"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="center"
+        app:flow_wrapMode="chain"
+        app:flow_verticalStyle="packed"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/rounded_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/character_image_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/character_image_detail"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/character_name_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/orange"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        tools:text="@tools:sample/first_names"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/character_specie_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        tools:text="@tools:sample/first_names"/>
+
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_episodes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="detail_episodes_text,character_episodes_detail"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="center"
+        app:flow_wrapMode="chain"
+        app:flow_verticalStyle="packed"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/padding_detail"
+        android:paddingBottom="@dimen/padding_detail"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_bg"
+        app:layout_constraintTop_toBottomOf="@id/character_image_detail"
+        app:layout_constraintEnd_toStartOf="@id/flow_status"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_episodes_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/orange_light"
+        android:textSize="@dimen/detail_text"
+        android:textStyle="bold"
+        android:text="@string/detail_episodes_text"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/character_episodes_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/detail_text"
+        android:textStyle="bold"
+        tools:text="@tools:sample/first_names"/>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="detail_status_text,character_status_detail"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="center"
+        app:flow_wrapMode="chain"
+        app:flow_verticalStyle="packed"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/padding_detail"
+        android:paddingBottom="@dimen/padding_detail"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/rounded_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/character_image_detail"
+        app:layout_constraintStart_toEndOf="@id/flow_episodes" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/bg_screen"
+        android:textSize="@dimen/detail_text"
+        android:textStyle="bold"
+        android:text="@string/detail_status_text"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/character_status_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/detail_text"
+        android:textStyle="bold"
+        tools:text="@tools:sample/first_names"/>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_origen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="detail_origin_text,character_origin_detail"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="center"
+        app:flow_wrapMode="chain"
+        app:flow_verticalStyle="packed"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/padding_detail"
+        android:paddingBottom="@dimen/padding_detail"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/flow_episodes"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_origin_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/orange_light"
+        android:textSize="@dimen/detail_text"
+        android:textStyle="bold"
+        android:text="@string/detail_origin_text"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/character_origin_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/detail_text"
+        android:textStyle="bold"
+        tools:text="@tools:sample/first_names"/>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="detail_type_text,character_type_detail"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="center"
+        app:flow_wrapMode="chain"
+        app:flow_verticalStyle="packed"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/padding_detail"
+        android:paddingBottom="@dimen/padding_detail"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_bg"
+        app:layout_constraintTop_toBottomOf="@id/flow_origen"
+        app:layout_constraintEnd_toStartOf="@id/flow_gender"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_type_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/orange_light"
+        android:textSize="@dimen/detail_text"
+        android:textStyle="bold"
+        android:text="@string/detail_type_text"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/character_type_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/detail_text"
+        android:textStyle="bold"
+        tools:text="@tools:sample/first_names"/>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_gender"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="detail_gender_text,character_gender_detail"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="center"
+        app:flow_wrapMode="chain"
+        app:flow_verticalStyle="packed"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/padding_detail"
+        android:paddingBottom="@dimen/padding_detail"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/rounded_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/flow_origen"
+        app:layout_constraintStart_toEndOf="@id/flow_type" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_gender_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/orange_light"
+        android:textSize="@dimen/detail_text"
+        android:textStyle="bold"
+        android:text="@string/detail_gender_text"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/character_gender_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/detail_text"
+        android:textStyle="bold"
+        tools:text="@tools:sample/first_names"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

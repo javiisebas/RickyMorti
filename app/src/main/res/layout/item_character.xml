@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/image_character"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="5dp"
+    android:background="@drawable/rounded_bg">
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_columns"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="character_image,flow_content"
+        app:flow_horizontalAlign="start"
+        app:flow_wrapMode="chain"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/character_image"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/image_character"
+        android:contentDescription="@string/character_image"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.ShapeableImageView"
+        tools:src="@tools:sample/avatars" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="character_name,line_status_specie,location_text,character_location,episode_text,character_episode"
+        app:flow_horizontalAlign="start"
+        app:flow_verticalAlign="center"
+        app:flow_wrapMode="chain"
+        app:flow_verticalStyle="packed"
+        android:orientation="vertical"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintWidth_default="spread"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/character_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:text="@tools:sample/first_names" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/line_status_specie"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="character_image_status,character_status,separator,character_species"
+        app:flow_horizontalAlign="start"
+        app:flow_verticalAlign="center"
+        app:flow_wrapMode="chain"
+        app:flow_verticalStyle="packed"
+        android:orientation="horizontal"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/character_image_status"
+        android:layout_width="@dimen/dimen_status"
+        android:layout_height="@dimen/dimen_status"
+        tools:src="@drawable/status_alive"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/character_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/primary_text"
+        android:paddingStart="5dp"
+        tools:text="@tools:sample/first_names" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/separator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/primary_text"
+        android:paddingHorizontal="3dp"
+        android:text="@string/separator" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/character_species"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/primary_text"
+        tools:text="@tools:sample/first_names" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/location_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/card_text"
+        android:textSize="@dimen/primary_text"
+        android:paddingTop="5dp"
+        android:text="@string/location_text" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/character_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/primary_text"
+        tools:text="@tools:sample/first_names" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/episode_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/card_text"
+        android:textSize="@dimen/primary_text"
+        android:paddingTop="5dp"
+        android:text="@string/episode_text" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/character_episode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/primary_text"
+        tools:text="@tools:sample/first_names" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
